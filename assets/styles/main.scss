@@ -2,10 +2,10 @@
 @import "../../node_modules/sweetalert/lib/sweet-alert";
 
 @mixin clearfix {
-  &:after {
+  &::after {
+    clear: both;
     content: "";
     display: table;
-    clear:   both;
   }
 }
 
