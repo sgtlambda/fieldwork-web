@@ -320,7 +320,10 @@
     $(function () {
         $('[data-input-mask]').each(function () {
             var $this = $(this);
-            $this.mask($this.data('input-mask'));
+            var mask = $this.data('input-mask');
+            $this.simpleMask({
+                mask: mask
+            });
         });
         Fieldwork.processForms();
     });
