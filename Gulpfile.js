@@ -5,7 +5,7 @@ var out = './dist';
 
 gulp.task('styles', function () {
     gulp.src([
-        'bower_components/datetimepicker/jquery.datetimepicker.css',
+        'node_modules/jquery-datetimepicker/jquery.datetimepicker.css',
         'assets/styles/main.scss'
     ])
         .pipe(plugins.sourcemaps.init())

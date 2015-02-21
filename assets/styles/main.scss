@@ -1,5 +1,5 @@
 @import "tooltips";
-@import "../../bower_components/sweetalert/lib/sweet-alert";
+@import "../../node_modules/sweetalert/lib/sweet-alert";
 
 @mixin clearfix {
   &:after {
