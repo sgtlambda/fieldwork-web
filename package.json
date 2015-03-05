@@ -2,7 +2,7 @@
   "name":            "fieldwork-web",
   "version":         "0.0.1",
   "description":     "Frond-end resources for the fieldwork library",
-  "main":            "assets/js/fieldwork.js",
+  "main":            "lib/fieldwork.js",
   "author":          "JM Versteeg",
   "license":         "MIT",
   "dependencies":    {
