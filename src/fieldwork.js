@@ -96,6 +96,8 @@
         this.hiddenFieldName = formData.hiddenFieldName;
         this.dataFields = formData.dataFields;
         this.element = $form;
+        this.ajaxEnabled = formData.ajax.submitEnabled;
+        $form.data('fw-form', this);
         this.fields = [];
         this.validators = [];
         for (var n in formData.fields)
@@ -229,10 +231,16 @@
                 field.keyup(e, this);
             }
         });
-        if (this.element.is('[type="checkbox"]'))
+        if (this.element.is('[type="checkbox"]')) {
             this.element.on('change', function () {
                 field.blur();
             });
+            this.element.parent().click(function () {
+                setTimeout(function () {
+                    field.validate();
+                }, 50);
+            });
+        }
     }
 
     $.extend(Field.prototype, {
@@ -327,4 +335,7 @@
         });
         Fieldwork.processForms();
     });
+    if (!Object.prototype.hasOwnProperty.call(window, 'Fieldwork')) {
+        window.Fieldwork = Fieldwork;
+    }
 })(jQuery, window, document);
