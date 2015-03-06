@@ -4,7 +4,7 @@
   "description":     "Frond-end resources for the fieldwork library",
   "main":            "lib/fieldwork.js",
   "scripts":         {
-    "pretest": "jshint index.js",
+    "pretest": "jshint lib",
     "test":    "mocha -R spec"
   },
   "repository":      {
