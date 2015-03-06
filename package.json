@@ -20,9 +20,9 @@
   "author":          "JM Versteeg",
   "license":         "MIT",
   "bugs":            {
-    "url": "https://github.com/jmversteeg/functionify/issues"
+    "url": "https://github.com/jmversteeg/fieldwork-web/issues"
   },
-  "homepage":        "https://github.com/jmversteeg/functionify",
+  "homepage":        "https://github.com/jmversteeg/fieldwork-web",
   "dependencies":    {
     "jquery":                "^2.1.3",
     "jquery-datetimepicker": "^2.4.0",
