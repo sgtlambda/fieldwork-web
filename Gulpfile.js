@@ -9,12 +9,6 @@ var gulp       = require('gulp'),
     concat     = require('gulp-concat'),
     sourcemaps = require('gulp-sourcemaps');
 
-var getBundleName = function () {
-    var version = require('./package.json').version;
-    var name = require('./package.json').name;
-    return version + '.' + name + '.' + 'min';
-};
-
 var out = './dist';
 
 gulp.task('styles', function () {
@@ -32,23 +26,17 @@ gulp.task('styles', function () {
 
 gulp.task('scripts', function () {
 
-    var bundler = browserify({
+    return browserify({
         entries: ['./lib/fieldwork.js'],
         debug:   true
-    });
-
-    var bundle = function () {
-        return bundler
-            .bundle()
-            .pipe(source(getBundleName() + '.js'))
-            .pipe(buffer())
-            .pipe(sourcemaps.init({loadMaps: true}))
-            .pipe(uglify())
-            .pipe(sourcemaps.write('./'))
-            .pipe(gulp.dest('./dist/js/'));
-    };
-
-    return bundle();
+    })
+        .bundle()
+        .pipe(source('fieldwork.js'))
+        .pipe(buffer())
+        //.pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        //.pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('default', ['styles', 'scripts']);
