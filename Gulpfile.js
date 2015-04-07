@@ -33,7 +33,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
 
     var bundler = browserify({
-        entries: ['./src/fieldwork.js'],
+        entries: ['./lib/fieldwork.js'],
         debug:   true
     });
 
