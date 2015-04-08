@@ -1,16 +1,18 @@
 'use strict';
 
-var gulp       = require('gulp'),
-    browserify = require('browserify'),
-    source     = require('vinyl-source-stream'),
-    buffer     = require('vinyl-buffer'),
-    uglify     = require('gulp-uglify'),
-    sass       = require('gulp-sass'),
-    concat     = require('gulp-concat'),
-    sourcemaps = require('gulp-sourcemaps'),
-    gulpif     = require('gulp-if'),
-    chalk      = require('chalk'),
-    argv       = require('yargs')
+var gulp         = require('gulp'),
+    browserify   = require('browserify'),
+    buffer       = require('vinyl-buffer'),
+    source       = require('vinyl-source-stream'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifyCSS    = require('gulp-minify-css'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    uglify       = require('gulp-uglify'),
+    concat       = require('gulp-concat'),
+    sass         = require('gulp-sass'),
+    gulpif       = require('gulp-if'),
+    chalk        = require('chalk'),
+    argv         = require('yargs')
         .boolean('dist')
         .argv;
 
@@ -28,7 +30,9 @@ gulp.task('styles', function () {
     ])
         .pipe(gulpif(dev, sourcemaps.init()))
         .pipe(sass())
+        .pipe(autoprefixer())
         .pipe(concat('fieldwork.css'))
+        .pipe(gulpif(!dev, minifyCSS()))
         .pipe(gulpif(dev, sourcemaps.write()))
         .pipe(gulp.dest(out));
 });
