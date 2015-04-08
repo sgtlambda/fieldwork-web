@@ -9,7 +9,8 @@
 
 $enqueue_fieldwork_assets = function () {
 
-    wp_enqueue_script('fieldwork', plugins_url('dist/fieldwork.js', __FILE__), ['jquery']);
+    wp_register_script('recaptcha-api', 'https://www.google.com/recaptcha/api.js');
+    wp_enqueue_script('fieldwork', plugins_url('dist/fieldwork.js', __FILE__), ['jquery', 'recaptcha-api']);
     wp_enqueue_style('fieldwork', plugins_url('dist/fieldwork.css', __FILE__));
 
 };
