@@ -21,6 +21,7 @@ console.log(chalk.red(dev ? 'Building dev assets' : 'Building dist assets'));
 var out = './dist';
 
 gulp.task('styles', function () {
+
     gulp.src([
         'node_modules/jquery-datetimepicker/jquery.datetimepicker.css',
         'assets/styles/main.scss'
