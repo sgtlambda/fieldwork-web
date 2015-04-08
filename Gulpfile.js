@@ -7,7 +7,16 @@ var gulp       = require('gulp'),
     uglify     = require('gulp-uglify'),
     sass       = require('gulp-sass'),
     concat     = require('gulp-concat'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    gulpif     = require('gulp-if'),
+    chalk      = require('chalk'),
+    argv       = require('yargs')
+        .boolean('dist')
+        .argv;
+
+var dev = !argv.dist;
+
+console.log(chalk.red(dev ? 'Building dev assets' : 'Building dist assets'));
 
 var out = './dist';
 
@@ -16,10 +25,10 @@ gulp.task('styles', function () {
         'node_modules/jquery-datetimepicker/jquery.datetimepicker.css',
         'assets/styles/main.scss'
     ])
-        .pipe(sourcemaps.init())
+        .pipe(gulpif(dev, sourcemaps.init()))
         .pipe(sass())
         .pipe(concat('fieldwork.css'))
-        .pipe(sourcemaps.write())
+        .pipe(gulpif(dev, sourcemaps.write()))
         .pipe(gulp.dest(out));
 });
 
@@ -33,9 +42,9 @@ gulp.task('scripts', function () {
         .bundle()
         .pipe(source('fieldwork.js'))
         .pipe(buffer())
-        //.pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(gulpif(dev, sourcemaps.init({loadMaps: true})))
         .pipe(uglify())
-        //.pipe(sourcemaps.write('./'))
+        .pipe(gulpif(dev, sourcemaps.write()))
         .pipe(gulp.dest('./dist/'));
 });
 
