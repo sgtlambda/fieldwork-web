@@ -26,6 +26,7 @@ gulp.task('styles', function () {
 
     gulp.src([
         'node_modules/jquery-datetimepicker/jquery.datetimepicker.css',
+        'node_modules/select2/select2.css',
         'assets/styles/main.scss'
     ])
         .pipe(gulpif(dev, sourcemaps.init()))

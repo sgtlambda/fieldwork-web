@@ -373,7 +373,7 @@ Form.prototype.submit = function (e) {
         if (typeof fn === 'function')
             fn(e, this);
     }
-    Fieldwork.performCallback(this.slug, Fieldwork.SUBMITCALLBACK, this, null, e);
+    //Fieldwork.performCallback(this.slug, Fieldwork.SUBMITCALLBACK, this, null, e);
 };
 
 Form.prototype.getValues = function () {
@@ -398,11 +398,6 @@ arguments[4][3][0].apply(exports,arguments)
 var $ = require('jquery');
 
 var core = {
-    AJAXCALLBACK:   0,
-    SUBMITCALLBACK: 1,
-    i:              {
-        callbacks: []
-    },
     //validators for fields
     validators:     {
         regex:    function (field, validator) {
