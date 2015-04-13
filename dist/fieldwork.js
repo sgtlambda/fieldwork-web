@@ -6,14 +6,17 @@ require('select2');
 
 var _         = require('lodash'),
     $         = require('jquery'),
+    core      = require('./core'),
     Validator = require('./validator'),
     Form      = require('./components/Form'),
     Field     = require('./components/Field');
 
 var Fieldwork = {
-    Validator: Validator,
-    Form:      Form,
-    Field:     Field
+    validators: core.validators,
+    sanitizers: core.sanitizers,
+    Validator:  Validator,
+    Form:       Form,
+    Field:      Field
 };
 
 $.fn.fieldwork = function (formData) {
@@ -24,7 +27,7 @@ module.exports = Fieldwork;
 
 if (window && !Object.prototype.hasOwnProperty.call(window, 'Fieldwork'))
     window.Fieldwork = Fieldwork;
-},{"./common/tooltips":2,"./components/Field":3,"./components/Form":4,"./validator":7,"jquery":9,"jquery-datetimepicker":8,"jquerysimplemask":10,"lodash":11,"select2":12}],2:[function(require,module,exports){
+},{"./common/tooltips":2,"./components/Field":3,"./components/Form":4,"./core":6,"./validator":7,"jquery":9,"jquery-datetimepicker":8,"jquerysimplemask":10,"lodash":11,"select2":12}],2:[function(require,module,exports){
 var $ = require('jquery');
 
 var FwTooltips = {
