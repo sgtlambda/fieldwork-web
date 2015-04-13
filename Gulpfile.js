@@ -49,7 +49,7 @@ gulp.task('scripts', function () {
         .pipe(source('fieldwork.js'))
         .pipe(buffer())
         .pipe(gulpif(dev, sourcemaps.init({loadMaps: true})))
-        .pipe(gulpif(!dev, sourcemaps.init({loadMaps: true})))
+        .pipe(gulpif(!dev, uglify()))
         .pipe(gulpif(dev, sourcemaps.write()))
         .pipe(gulp.dest('./dist/'));
 });
