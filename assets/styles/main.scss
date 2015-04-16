@@ -72,21 +72,21 @@ button.jfcomponent {
   }
 }
 
-textarea.fieldwork-field {
-  min-height: 120px;
-}
+//textarea.fieldwork-field {
+//  min-height: 120px;
+//}
 
-input.fieldwork-field.subjectline {
-  margin-bottom:              0;
-  border-bottom:              0;
-  border-bottom-left-radius:  0;
-  border-bottom-right-radius: 0;
-  &:focus {
-    border-bottom: 0;
-  }
-  & + textarea {
-    margin-top:              0;
-    border-top-left-radius:  0;
-    border-top-right-radius: 0;
-  }
-}
+//input.fieldwork-field.subjectline {
+//  margin-bottom:              0;
+//  border-bottom:              0;
+//  border-bottom-left-radius:  0;
+//  border-bottom-right-radius: 0;
+//  &:focus {
+//    border-bottom: 0;
+//  }
+//  & + textarea {
+//    margin-top:              0;
+//    border-top-left-radius:  0;
+//    border-top-right-radius: 0;
+//  }
+//}
