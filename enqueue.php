@@ -1,10 +1,6 @@
 <?php
 /**
- * Plugin Name: enqueue_fieldwork_assets
- */
-
-/**
- * Enqueues the fieldwork assets in a WP environment
+ * Plugin Name: fieldwork-web
  */
 
 $enqueue_fieldwork_assets = function () {
