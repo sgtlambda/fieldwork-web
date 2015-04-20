@@ -1,7 +1,7 @@
 {
   "name":            "fieldwork-web",
   "version":         "0.0.2",
-  "description":     "Frond-end resources for the fieldwork library",
+  "description":     "Front-end resources for the fieldwork library",
   "main":            "lib/fieldwork.js",
   "scripts":         {
     "pretest": "jshint lib",
