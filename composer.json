@@ -1,5 +1,5 @@
 {
-  "name":        "JM/fieldwork-web",
+  "name":        "jmversteeg/fieldwork-web",
   "version":     "0.0.2",
   "description": "Frond-end resources for the fieldwork library",
   "license":     "MIT",
