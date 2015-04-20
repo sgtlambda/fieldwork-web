@@ -1,0 +1,17 @@
+{
+  "name":        "JM/fieldwork-web",
+  "version":     "0.0.2",
+  "description": "Frond-end resources for the fieldwork library",
+  "license":     "MIT",
+  "authors":     [
+    {
+      "name":     "jmversteeg",
+      "email":    "janmerijnversteeg@gmail.com",
+      "homepage": "https://github.com/jmversteeg"
+    }
+  ],
+  "type":        "wordpress-muplugin",
+  "require":     {
+    "composer/installers": "~1.0"
+  }
+}
