@@ -28,11 +28,18 @@ div.select2-container.jfcomponent {
       }
     }
   }
-  &.select2-dropdown-open {
+  &.select2-dropdown-open:not(.select2-drop-above) {
     .select2-choices {
       @include fwfield-focus;
       border-bottom-left-radius:  0;
       border-bottom-right-radius: 0;
+    }
+  }
+  &.select2-dropdown-open.select2-drop-above {
+    .select2-choices {
+      @include fwfield-focus;
+      border-top-left-radius:  0;
+      border-top-right-radius: 0;
     }
   }
   .select2-choice {
