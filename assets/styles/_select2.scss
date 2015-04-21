@@ -46,6 +46,8 @@ div.select2-container.jfcomponent {
     height:      19px;
     padding:     10px;
     line-height: 19px;
+    background:  white;
+    box-shadow:  0 1px 0 rgba(0, 0, 0, 0.08);
     .select2-search-choice-close {
       top: 12px;
     }
@@ -56,7 +58,11 @@ div.select2-container.jfcomponent {
         background-position-y: 6px;
       }
     }
+    &:focus, &:active {
+      border: 1px solid #5897fb;
+    }
   }
+
   &.select2-dropdown-open {
     a {
       border:        1px solid #5897fb;
@@ -76,4 +82,8 @@ div.select2-container.jfcomponent {
 
 .select2-results .select2-no-results, .select2-results .select2-searching, .select2-results .select2-ajax-error, .select2-results .select2-selection-limit {
   background: transparent;
+}
+
+.select2-results li {
+  border-radius: 2px;
 }
