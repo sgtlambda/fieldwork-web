@@ -62,6 +62,11 @@ div.select2-container.jfcomponent {
       border:        1px solid #5897fb;
       border-radius: 3px 3px 0 0;
     }
+    &.select2-drop-above {
+      a {
+        border-radius: 0 0 3px 3px;
+      }
+    }
   }
 }
 
