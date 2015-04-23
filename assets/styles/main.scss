@@ -4,11 +4,9 @@
 @import "../../node_modules/sweetalert/lib/sweet-alert";
 
 .form-error {
-  padding:          8px;
-  margin:           12px 0 10px;
-  border:           1px solid #f62e2e;
-  background-color: #f4c3c3;
-  font-weight:      bold;
+  &.card {
+    margin-bottom: 40px;
+  }
 }
 
 .invisible-target-button {
