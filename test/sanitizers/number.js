@@ -17,6 +17,8 @@ describe('Number sanitizer', function () {
         number('.1', sanitizer).should.equal('0.1');
         number('a,777', sanitizer).should.equal('0.78');
         number('', sanitizer).should.equal('');
+        number('hello world', sanitizer).should.equal('');
+        number('.', sanitizer).should.equal('');
         number('0.565464', sanitizer).should.equal('0.57');
 
     });
