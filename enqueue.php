@@ -1,6 +1,7 @@
 <?php
 /**
  * Plugin Name: fieldwork-web
+ * Description: Contains the front-end resources for the fieldwork library
  */
 
 $enqueue_fieldwork_assets = function () {
