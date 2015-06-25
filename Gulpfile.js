@@ -2,6 +2,7 @@
 
 var gulp         = require('gulp'),
     browserify   = require('browserify'),
+    streamqueue  = require('streamqueue'),
     buffer       = require('vinyl-buffer'),
     source       = require('vinyl-source-stream'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -26,7 +27,7 @@ gulp.task('styles', function () {
 
     gulp.src([
         'node_modules/jquery-datetimepicker/jquery.datetimepicker.css',
-        'node_modules/select2/select2.css',
+        'node_modules/Select2/dist/css/select2.min.css',
         'assets/styles/main.scss'
     ])
         .pipe(gulpif(dev, sourcemaps.init()))
@@ -41,23 +42,33 @@ gulp.task('styles', function () {
 
 gulp.task('scripts', function () {
 
-    return browserify({
+    var browserifiedBundle = browserify({
         entries: ['./lib/fieldwork.js'],
         debug:   true
-    })
-        .bundle()
+    }).bundle()
         .pipe(source('fieldwork.js'))
-        .pipe(buffer())
+        .pipe(buffer());
+
+    var select2 = gulp.src([
+        'node_modules/Select2/dist/js/select2.full.min.js'
+    ]);
+
+    return streamqueue({objectMode: true},
+        browserifiedBundle,
+        select2
+    )
         .pipe(gulpif(dev, sourcemaps.init({loadMaps: true})))
+        .pipe(concat('fieldwork.js'))
         .pipe(gulpif(!dev, uglify()))
         .pipe(gulpif(dev, sourcemaps.write()))
         .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('copy-select2-assets', function () {
+
     return gulp.src([
-        'node_modules/select2/*.png',
-        'node_modules/select2/*.gif'
+        'node_modules/Select2/*.png',
+        'node_modules/Select2/*.gif'
     ])
         .pipe(gulp.dest('./dist/'));
 });
