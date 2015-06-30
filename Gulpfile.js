@@ -73,4 +73,9 @@ gulp.task('copy-select2-assets', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('watch', function () {
+    gulp.watch('assets/**/*.scss', ['styles']);
+    gulp.watch('lib/**/*.js', ['scripts']);
+});
+
 gulp.task('default', ['styles', 'scripts', 'copy-select2-assets']);
