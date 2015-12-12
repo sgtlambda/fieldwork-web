@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp         = require('gulp'),
+    babelify     = require('babelify'),
     browserify   = require('browserify'),
     streamqueue  = require('streamqueue'),
     buffer       = require('vinyl-buffer'),
@@ -26,10 +27,10 @@ var out = './dist';
 gulp.task('styles', function () {
 
     gulp.src([
-        'node_modules/jquery-datetimepicker/jquery.datetimepicker.css',
-        'node_modules/Select2/dist/css/select2.min.css',
-        'assets/styles/main.scss'
-    ])
+            'node_modules/jquery-datetimepicker/jquery.datetimepicker.css',
+            'node_modules/Select2/dist/css/select2.min.css',
+            'assets/styles/main.scss'
+        ])
         .pipe(gulpif(dev, sourcemaps.init()))
         .pipe(sass())
         .pipe(autoprefixer())
@@ -43,9 +44,11 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
 
     var browserifiedBundle = browserify({
-        entries: ['./lib/fieldwork.js'],
+        entries: ['./lib/expose.js'],
         debug:   true
-    }).bundle()
+    })
+        .transform(babelify, {presets: ["es2015"]})
+        .bundle()
         .pipe(source('fieldwork.js'))
         .pipe(buffer());
 
@@ -67,9 +70,9 @@ gulp.task('scripts', function () {
 gulp.task('copy-select2-assets', function () {
 
     return gulp.src([
-        'node_modules/Select2/*.png',
-        'node_modules/Select2/*.gif'
-    ])
+            'node_modules/Select2/*.png',
+            'node_modules/Select2/*.gif'
+        ])
         .pipe(gulp.dest('./dist/'));
 });
 
