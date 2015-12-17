@@ -3,7 +3,7 @@
 var gulp         = require('gulp'),
     babelify     = require('babelify'),
     browserify   = require('browserify'),
-    streamqueue  = require('streamqueue'),
+    merge        = require('merge2'),
     buffer       = require('vinyl-buffer'),
     source       = require('vinyl-source-stream'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -26,17 +26,16 @@ var out = './dist';
 
 gulp.task('styles', function () {
 
-    gulp.src([
-            'node_modules/jquery-datetimepicker/jquery.datetimepicker.css',
-            'node_modules/Select2/dist/css/select2.min.css',
-            'assets/styles/main.scss'
-        ])
-        .pipe(gulpif(dev, sourcemaps.init()))
-        .pipe(sass())
-        .pipe(autoprefixer())
+    return merge(
+        gulp.src('node_modules/Select2/dist/css/select2.min.css'),
+        gulp.src('assets/styles/main.scss')
+            .pipe(gulpif(dev, sourcemaps.init()))
+            .pipe(sass())
+            .pipe(autoprefixer())
+            .pipe(gulpif(dev, sourcemaps.write()))
+    )
         .pipe(concat('fieldwork.css'))
         .pipe(gulpif(!dev, minifyCSS()))
-        .pipe(gulpif(dev, sourcemaps.write()))
         .pipe(gulp.dest(out));
 });
 
@@ -56,7 +55,7 @@ gulp.task('scripts', function () {
         'node_modules/Select2/dist/js/select2.full.min.js'
     ]);
 
-    return streamqueue({objectMode: true},
+    return merge(
         browserifiedBundle,
         select2
     )

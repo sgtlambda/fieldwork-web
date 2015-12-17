@@ -1,7 +1,8 @@
 {
-  "node": true,
+  "node":    true,
+  "esnext":  true,
   "browser": true,
-  "predef": [
+  "predef":  [
     "jQuery"
   ]
 }

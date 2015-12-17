@@ -1,0 +1,8 @@
+install:
+ - npm install
+
+build:
+ - gulp --dist
+
+purge:
+ - "!dist"
