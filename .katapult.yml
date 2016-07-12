@@ -1,0 +1,18 @@
+install:
+  - cmd: npm install
+    input: package.json
+    output: node_modules
+
+build:
+  - gulp --dist
+
+purge:
+  - assets
+  - lib
+  - node_modules
+  - composer.json
+  - test
+  - "*.md"
+  - ".*"
+  - "*.json"
+  - gulpfile.js
