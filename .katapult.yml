@@ -4,7 +4,7 @@ install:
     output: node_modules
 
 build:
-  - gulp --dist
+  - gulp
 
 purge:
   - assets
