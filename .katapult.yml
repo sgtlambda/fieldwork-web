@@ -4,7 +4,11 @@ install:
     output: node_modules
 
 build:
-  - gulp
+  - cmd: gulp
+    input:
+      - assets
+      - node_modules
+      - gulpfile.js
 
 purge:
   - assets
