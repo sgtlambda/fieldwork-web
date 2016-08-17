@@ -9,6 +9,7 @@ build:
       - assets
       - node_modules
       - gulpfile.js
+    output: dist
 
 purge:
   - assets

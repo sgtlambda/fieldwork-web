@@ -67,8 +67,8 @@ gulp.task('scripts', function () {
 gulp.task('copy-select2-assets', function () {
 
     return gulp.src([
-        'node_modules/Select2/*.png',
-        'node_modules/Select2/*.gif'
+        'node_modules/select2/*.png',
+        'node_modules/select2/*.gif'
     ])
         .pipe(gulp.dest('./dist/'));
 });
