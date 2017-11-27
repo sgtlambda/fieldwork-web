@@ -6,7 +6,7 @@ install:
     output: node_modules
 
 build:
-  - cmd: ./node_modules/.bin/gulp
+  - cmd: ./node_modules/.bin/gulp --dist
     input:
       - assets
       - node_modules
