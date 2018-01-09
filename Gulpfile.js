@@ -26,7 +26,6 @@ gulp.task('styles', function () {
 
     gulp.src([
         'node_modules/jquery-datetimepicker/jquery.datetimepicker.css',
-        'node_modules/select2/select2.css',
         'assets/styles/main.scss'
     ])
         .pipe(gulpif(dev, sourcemaps.init()))
@@ -54,12 +53,4 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('copy-select2-assets', function () {
-    return gulp.src([
-        'node_modules/select2/*.png',
-        'node_modules/select2/*.gif'
-    ])
-        .pipe(gulp.dest('./dist/'));
-});
-
-gulp.task('default', ['styles', 'scripts', 'copy-select2-assets']);
+gulp.task('default', ['styles', 'scripts']);
