@@ -1,0 +1,9 @@
+purge:
+  - "assets"
+  - "lib"
+  - "test"
+  - ".*"
+  - "*.json"
+  - "yarn.lock"
+  - "*.js"
+  - "*.md"
