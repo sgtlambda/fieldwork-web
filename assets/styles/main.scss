@@ -1,7 +1,5 @@
 @import 'common';
 @import "tooltips";
-@import "select2";
-@import "../../node_modules/sweetalert/dev/sweetalert";
 
 .form-error {
   padding:          8px;
@@ -59,17 +57,6 @@ button.jfcomponent {
 
 .xdsoft_datetimepicker {
   z-index: 1500;
-}
-
-.sweet-overlay {
-  z-index: 2000;
-}
-
-.sweet-alert {
-  z-index: 2500;
-  .error {
-    box-sizing: initial;
-  }
 }
 
 textarea.fieldwork-field {

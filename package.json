@@ -49,15 +49,11 @@
     "jshint": "^2.7.0",
     "lodash": "^4.17.4",
     "mocha": "^4.1.0",
-    "select2": "^3.5.2-browserify",
     "sinon": "^4.1.4",
     "sinon-chai": "^2.7.0",
-    "sweetalert": "^1.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^10.0.3"
   },
-  "dependencies": {
-    "jquery": "^3.2.1"
-  }
+  "dependencies": {}
 }
