@@ -43,7 +43,7 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^3.0.0",
     "istanbul": "^0.3.16",
-    "jquery": "^2.1.4",
+    "jquery": "^3.5.0",
     "jquery-datetimepicker": "^2.4.0",
     "jquerysimplemask": "^1.0.0",
     "jshint": "^2.8.0",
