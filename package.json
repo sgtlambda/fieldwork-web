@@ -56,5 +56,8 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^3.13.0"
+  },
+  "dependencies": {
+    "select2": "git://github.com/select2/select2"
   }
 }

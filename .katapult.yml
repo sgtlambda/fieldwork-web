@@ -1,17 +1,17 @@
-install:
-  - cmd: yarn install && yarn add git://github.com/select2/select2
-    input:
-     - package.json
-     - yarn.lock
-    output: node_modules
-
-build:
-  - cmd: ./node_modules/.bin/gulp --dist
-    input:
-      - assets
-      - node_modules
-      - gulpfile.js
-    output: dist
+# install:
+#   - cmd: yarn install && yarn add git://github.com/select2/select2
+#     input:
+#      - package.json
+#      - yarn.lock
+#     output: node_modules
+#
+# build:
+#   - cmd: ./node_modules/.bin/gulp --dist
+#     input:
+#       - assets
+#       - node_modules
+#       - gulpfile.js
+#     output: dist
 
 purge:
   - assets

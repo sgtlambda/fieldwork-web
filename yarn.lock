@@ -3894,6 +3894,10 @@ scss-tokenizer@^0.2.3:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
 
+"select2@git://github.com/select2/select2":
+  version "4.1.0-beta.1"
+  resolved "git://github.com/select2/select2#ef33f4be110f5154c11b49d73e7b15921e143398"
+
 "semver@2 || 3 || 4 || 5":
   version "5.5.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.1.tgz#7dfdd8814bdb7cabc7be0fb1d734cfb66c940477"
